@@ -2,6 +2,8 @@
 
 This repository chronicles a significant step in my web development learning journey. Here, I've delved into the practical application of fetching data from a public API (OpenWeatherMap) to build a dynamic and informative weather application. Beyond API integration, this project served as an excellent opportunity to solidify and enhance my foundational skills in HTML, CSS, and JavaScript.
 
+![Weather App Screenshot](link-to-your-image)
+
 ## What I've Learned and Applied:
 
 * **API Integration:** Successfully fetched real-time weather data and 5-day forecasts from the OpenWeatherMap API, demonstrating an understanding of asynchronous JavaScript (`async/await`) and handling API responses.
