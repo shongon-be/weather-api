@@ -17,7 +17,7 @@ const forecastItemsContainer = document.querySelector(
   ".forecast-items-container"
 );
 
-const apiKey = "6ecbcc7e5b17238f89acb8b194bc384b";
+const apiKey = CONFIG.API_KEY;
 
 searchBtn.addEventListener("click", () => {
   if (cityInput.value.trim() != "") {
