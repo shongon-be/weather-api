@@ -17,7 +17,7 @@ const forecastItemsContainer = document.querySelector(
   ".forecast-items-container"
 );
 
-const apiKey = CONFIG.API_KEY;
+const apiKey = "YOUR_API_KEY_PLACEHOLDER";
 
 searchBtn.addEventListener("click", () => {
   if (cityInput.value.trim() != "") {
@@ -97,7 +97,7 @@ async function updateWeatherInfo(city) {
 async function updateForecastsInfo(city) {
   const forecastData = await getFetchData("forecast", city);
 
-  forecastItemsContainer.innerHTML = ''
+  forecastItemsContainer.innerHTML = "";
 
   const timeTaken = "12:00:00";
   const todayDate = new Date().toISOString().split("T")[0];
@@ -121,25 +121,27 @@ function updateForecastsItems(weatherData) {
     main: { temp },
   } = weatherData;
 
-  const dateTaken = new Date(date)
+  const dateTaken = new Date(date);
   const dateOption = {
-    day: '2-digit',
-    month: 'short'
-  }
-  const dateResult = dateTaken.toLocaleDateString('en-US', dateOption)
+    day: "2-digit",
+    month: "short",
+  };
+  const dateResult = dateTaken.toLocaleDateString("en-US", dateOption);
 
   const forecastItem = `
-           <div class="forecast-item">
+          <div class="forecast-item">
             <h5 class="forecast-item-date regular-txt">${dateResult}</h5>
             <img
               src="assets/weather/${getWeatherIcon(id)}"
               class="forecast-item-img"
             />
-            <h5 class="forecast-item-temp regular-txt">${Math.round(temp)} °C</h5>
+            <h5 class="forecast-item-temp regular-txt">${Math.round(
+              temp
+            )} °C</h5>
           </div>
-  `
+  `;
 
-  forecastItemsContainer.insertAdjacentHTML ('beforeend', forecastItem)
+  forecastItemsContainer.insertAdjacentHTML("beforeend", forecastItem);
 }
 
 function showDisplaySection(section) {
