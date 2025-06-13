@@ -16,7 +16,9 @@ jobs:
 
       - name: Replace API Key
         run: |
-          sed -i 's/YOUR_API_KEY_PLACEHOLDER/${{ secrets.WEATHER_API_KEY }}/g' app.js
+          sed -i "s/YOUR_API_KEY_PLACEHOLDER/${{ secrets.WEATHER_API_KEY }}/g" app.js
+          echo "API Key replaced successfully"
+          grep -n "apiKey" app.js
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
